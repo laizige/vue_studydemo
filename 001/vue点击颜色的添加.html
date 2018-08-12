@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+	<div id="app">
+		<div v-for="(item, index) in list" 
+			@click="clickHandler(index)" :class="{active: index === activeIndex}" :style="'color:'+(item.value>0?'red':'green')+';'">{{item.name}}
+		</div>
+	</div>
+					<!-- vue1.0 item和index换下位置 -->
+    <script>
+			var app = new Vue({
+					el: '#app',
+					data: {
+							list: [{
+								name: 1,
+								value: 1
+							}, {
+								name: 2,
+								value: -1
+							}, {
+								name: 3,
+								value: 3
+							}],
+							activeIndex: -1
+					},
+					created() {
+						//页面加载
+					},
+					methods: {
+						clickHandler(index) {
+							this.activeIndex = index
+						}
+					}		
+				})
+		</script>
+		<style>
+			.active {
+				background-color: yellow;
+			}
+		</style>
+</body>
+</html>

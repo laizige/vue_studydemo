@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arrInfo={"status":1,"info":"查询成功","data":{"student_num":"15010700018","student_name":"佳瑞2","total_score":93,"total_grade":"优秀","bmi_score":"165.0厘米\/52.0千克","bmi_grade":"正常","bmi_class":"green","vc_score":"5000毫升","vc_grade":"优秀","vc_class":"green","jump_score":"180.0厘米","jump_grade":"及格","jump_class":"green","sit_and_reach_score":"30.0厘米","sit_and_reach_grade":"优秀","sit_and_reach_class":"green","pull_and_sit_score":"60次","pull_and_sit_grade":"优秀","pull_and_sit_class":"green","50m_score":"6.0秒","50m_grade":"优秀","50m_class":"green","run_score":"4'0''","run_grade":"及格","run_class":"green","grade":2015}}
+        
+        console.log(arrInfo.data)
+        
+        var newInfo= { "status": 1, "info": "查询成功", "data":{}}
+        console.log(newInfo.data)
+        var info= newInfo.data;
+        if(JSON.stringify(info) == "{}"){
+            alert("空的")
+        }
+        if(JSON.stringify(arrInfo.data) == "{}"){
+            console.log("有数据")
+        }else{
+            console.log("不是空的")
+        }
+
+        var FoodData= { "status": 1, "info": "查询成功", 
+            "data": [
+                { "goodsId": 1, "goodsName": "香辣鸡腿堡", "price": 18 }, 
+                { "goodsId": 2, "goodsName": "田园鸡腿堡", "price": 15 }, 
+                { "goodsId": 3, "goodsName": "和风汉堡", "price": 15 },
+                { "goodsId": 4, "goodsName": "大包薯条", "price": 18 }
+            ]
+        }
+         console.log(FoodData.data.length)
+   
+    </script>
+</body>
+</html>
